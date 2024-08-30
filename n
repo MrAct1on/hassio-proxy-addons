@@ -1,0 +1,5 @@
+{
+  "name": "Home Assistant Add-on: Proxy Action",
+  "url": "https://github.com/MrAct1on/Hassio-Proxy-Addons",
+  "maintainer": "Mr. Action <actiondjack@gmail.com>"
+}
