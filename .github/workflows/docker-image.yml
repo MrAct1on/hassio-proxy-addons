@@ -2,7 +2,9 @@ name: ProxiesAction
 
 on:
   push:
-    branches: main
+    branches: [ "GitAction" ]
+  pull_request:
+    branches: [ "GitAction" ]
 jobs:
     build:
       name: proxies-action
@@ -13,7 +15,7 @@ jobs:
           id: docker-hub
           env:
             username: ${{secrets.DOCKER_USER}}
-            password: ${{secrets.DOCKER_PASS}}
+            password: ${{secrets.DOCKER_PASS0}}
           run: |
             docker login -u $username -p $password 
         - name: build the docker image
