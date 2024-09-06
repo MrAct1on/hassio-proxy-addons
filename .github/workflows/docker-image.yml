@@ -3,8 +3,6 @@ name: ProxiesAction
 on:
   push:
     branches: main
-  pull_request:
-    branches: main
 jobs:
     build:
       name: proxies-action
@@ -22,7 +20,7 @@ jobs:
           id: build-docker-image
           run: |
             ls -la 
-            docker build . -f Dockerfile -t mract1on/proxies-action:latest
+            docker build . -f Dockerfile -t mract1on/proxies-action-test:latest
         - name: push the docker image
           id: push-docker-image
-          run: docker push ${{secrets.DOCKER_USER}}/proxies-action:latest
+          run: docker push ${{secrets.DOCKER_USER}}/proxies-action-test:latest
