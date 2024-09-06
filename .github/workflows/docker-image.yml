@@ -3,8 +3,6 @@ name: ProxiesAction
 on:
   push:
     branches: [ "GitAction" ]
-  pull_request:
-    branches: [ "GitAction" ]
 jobs:
     build:
       name: proxies-action
