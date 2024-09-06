@@ -12,7 +12,7 @@ jobs:
         - name: login to docker hub
           id: docker-hub
           env:
-            username: ${{secrets.DOCKER_USER}}
+            username: ${{secrets.DOCKER_ENV_USER}}
             password: ${{secrets.DOCKER_ENV_PASS0}}
           run: |
             docker login -u $username -p $password 
@@ -23,4 +23,4 @@ jobs:
             docker build . -f Dockerfile -t mract1on/proxies-action-test:latest
         - name: push the docker image
           id: push-docker-image
-          run: docker push ${{secrets.DOCKER_USER}}/proxies-action-test:latest
+          run: docker push ${{secrets.DOCKER_ENV_USER}}/proxies-action-test:latest
