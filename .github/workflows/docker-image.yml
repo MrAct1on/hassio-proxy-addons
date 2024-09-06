@@ -1,26 +1,30 @@
-name: ProxiesAction
+name: Docker Build Proxies-Action
 
 on:
   push:
-    branches: [ "GitAction" ]
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    
 jobs:
+
     build:
       name: proxies-action
-      runs-on: linux
+      runs-on: linux-latest
+      
       steps:
-        - uses: actions/checkout@v2
+        - name: Checkout code
+          uses: actions/checkout@v3
+          
         - name: login to docker hub
-          id: docker-hub
-          env:
+          uses: docker/login-action@v2
+          with:
             username: ${{secrets.DOCKER_USER}}
-            password: ${{secrets.DOCKER_PASS}}
-          run: |
-            docker login -u $username -p $password 
-        - name: build the docker image
-          id: build-docker-image
-          run: |
-            ls -la 
-            docker build . -f Dockerfile -t mract1on/proxies-action-test:latest
-        - name: push the docker image
-          id: push-docker-image
-          run: docker push ${{secrets.DOCKER_USER}}/proxies-action-test:latest
+            password: ${{secrets.DOCKER_PASS0}}
+            
+        - name: Build and push
+          uses: docker/build-push-action@v4
+          with:
+            context: .
+            push: true
+            tags: mract1on/proxies-action:latest
