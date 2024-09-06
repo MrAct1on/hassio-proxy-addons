@@ -1,0 +1,26 @@
+name: Build Proxies Docker Image
+on:
+  push:
+    branches:
+      - main
+jobs:
+    build:
+      name: push docker image to docker hub
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: login to docker hub
+          id: docker-hub
+          env:
+            username: ${{secrets.DOCKER_ENV_USER}}
+            password: ${{secrets.DOCKER_ENV_PASS0}}
+          run: |
+            docker login -u $username -p $password 
+        - name: build the docker image
+          id: build-docker-image
+          run: |
+            ls -la 
+            docker build . -f Dockerfile -t mract1on/proxies-action:latest
+        - name: push the docker image
+          id: push-docker-image
+          run: docker push ${{secrets.DOCKER_ENV_USER}}/proxies-action:latest
