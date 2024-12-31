@@ -5,6 +5,5 @@ The sole purpose of this addon is to add an icon to the sidebar of Home Assistan
 
 ## Options
 
-- `server` (required): Set the local URL on which the Zigbee2MQTT frontend is running, e.g. `http://192.168.2.43:8080`. Make sure there is no trailing slash!
+- `server` (required): Set the local URL on which the page is running, e.g. `http://192.168.2.43:8080`. Make sure there is no trailing slash!
 - `auth_token` (optional): only use when you have an `auth_token` set for the frontend in the URL configuration.
-![logo](https://github.com/user-attachments/assets/c07b7602-4956-41dc-a0c1-11a2db1ce4e8)
