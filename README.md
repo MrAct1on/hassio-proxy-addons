@@ -1,5 +1,5 @@
 <div align="center">
-    <a href="https://github.com/zigbee2mqtt/hassio-zigbee2mqtt">
+    <a href="https://github.com/MrAct1on/Hassio-Proxy-Addons">
         <img width="150" height="150" src="Hassio-Proxy-Addons/logo.png">
     </a>
     <br>
