@@ -1,6 +1,6 @@
 <div align="center">
     <a href="https://github.com/zigbee2mqtt/hassio-zigbee2mqtt">
-        <img width="150" height="150" src="zigbee2mqtt/logo.png">
+        <img width="150" height="150" src="Hassio-Proxy-Addons/logo.png">
     </a>
     <br>
     <br>
